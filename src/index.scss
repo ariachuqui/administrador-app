@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./img/fondo.png');
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+    width: 90%;
+    h1{
+        color: #e4e4e4;
+        background: #3D405B;
+        border-radius: 10px 10px 0 0;
+        letter-spacing: 5px;
+        padding: 15px 0;
+        text-transform: capitalize;
+    }
+}
+
+.administracion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    div {
+        width: 50%;
+
+    }
+
+
+    h2{
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
+}
+
+.crear-cita{
+    background: #81B29A;
+    border-radius: 0 0 0 10px;
+    padding: 20px 25px;
+
+    .warning{
+        width: 100%;
+        background: #ff0000;
+        padding: 15px;
+        margin-bottom: 15px;
+        
+        p{
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    p{
+        color: rgba(0, 0, 0, .7);
+        font-size: 14px;
+        margin-bottom: 5px;
+        text-align: start;
+        text-transform: capitalize;
+    }
+
+    input{
+        width: 100%;
+        padding: 12px 5px;
+        margin-bottom: 15px;
+    }
+
+    button{
+        background: #E07A5F;
+        border-style: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        font-size: 13px;
+        padding: 10px;
+        text-transform: uppercase;
+        width: 100%;
+
+        &:hover{
+            background: rgba( #E07A5F, .8);
+        }
+    }
+}
+
+.mostrar-cita{
+    background: #F2CC8F;
+    border-radius: 0 0 10px 0;
+    padding: 20px 25px;
+
+    .cita{
+        background: #f2f2f2;
+        border-radius: 10px;
+        margin: 15px 0;
+        padding: 20px 15px;
+        text-align: start;
+        text-transform: capitalize;
+        width: 100%;
+
+        p{
+            margin-bottom: 5px;
+            span{
+                font-weight: bold;
+            }
+        }
+
+        button{
+            background: #ff0000;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 5px 0;
+            border-style: none;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+   
+    .administracion div{
+        width: 100%;
+    }
+}

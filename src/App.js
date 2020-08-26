@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import { CrearCita } from './components/CrearCita'
+import { MostrarCita } from './components/MostrarCita'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const initialState =  JSON.parse(localStorage.getItem('citas')) || [];
+
+    const [citas, setCitas] = useState(initialState)
+
+    useEffect(() => {
+        localStorage.setItem('citas', JSON.stringify(citas))
+     }, [citas])
+
+
+
+
+    return (
+        <>
+            <h1>administrador de pacientes</h1>
+            <div className="administracion">
+                <CrearCita setCitas={setCitas} />
+                <MostrarCita citas={citas} setCitas={setCitas}/>
+            </div>
+        </>
+    )
 }
 
-export default App;
+export default App
